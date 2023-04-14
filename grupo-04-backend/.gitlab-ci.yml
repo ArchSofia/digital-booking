@@ -1,0 +1,79 @@
+variables:
+  maven_opts: -Dmaven.repo.local=.m2/repository
+  
+image: maven:latest
+
+stages:
+  - build
+  - test
+  - package
+  - deploy
+
+cache:
+  paths:
+    - .m2/repository
+    - target
+
+build_job:
+  stage: build
+  script:
+    - cd demo-1
+    - echo "construyendo proyecto..."
+    - mvn clean compile
+    - ls -l
+    - cd target
+    - ls -l
+
+test_job:
+  stage: test 
+  script:
+    - cd demo-1
+    - echo "realizando tests..."
+    - mvn test
+  dependencies:
+    - build_job
+
+package_job:
+  stage: package
+  script:
+    - cd demo-1
+    - echo "empezando packagin.."
+    - mvn package
+    - pwd
+    - ls -l
+    - cd target
+    - ls -l
+    - pwd
+  artifacts:
+    name: packageBackend
+    paths:
+      - /builds/ctd/hispanos/proyecto-integrador-1/proyecto-integrador-0223/0522ft-c2/grupo-04/demo-1/target/demo-0.0.1-SNAPSHOT.jar
+  dependencies:
+    - test_job
+
+deploy_stage1:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - cd demo-1
+    - echo "updateing apk"
+    
+    - apt-get update
+    - apt-get install openssl
+    - mkdir -p /root/.ssh
+    - eval $(ssh-agent)
+    - openssl rsa -in <(echo "$SSH_PRIVATE_KEY") -out /tmp/id_rsa
+    - ssh-add /tmp/id_rsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$EC2_INSTANCE_IP" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - ssh -i /root/.ssh/id_rsa ec2-user@$EC2_INSTANCE_IP
+    - scp -i /root/.ssh/id_rsa target/demo-0.0.1-SNAPSHOT.jar ec2-user@$EC2_INSTANCE_IP:/path/to/application/
+    - ssh -i /root/.ssh/id_rsa ec2-user@$EC2_INSTANCE_IP "cd /path/to/application && java -jar demo-0.0.1-SNAPSHOT.jar"
+  
+  dependencies:
+    - package_job
+
+
+    
+

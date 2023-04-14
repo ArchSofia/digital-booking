@@ -1,0 +1,54 @@
+stages:
+  - build
+  - deploy
+
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+    
+variables:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
+install_node_modules_job:
+  stage: build
+  script:
+    - echo "installing npm..."
+    - npm --force install 
+    - echo "installing react-scripts.."
+    - npm install react-scripts
+    - echo "verifying that npm is installed..."
+    - npm -v
+    
+build_job:
+  stage: build
+  script:
+    - echo "building proyect..."
+    - CI=false npm run build
+    - echo "build finished"
+    - cd build
+    - ls -al
+  dependencies:
+    - install_node_modules_job
+  artifacts:
+    name: rect-build
+    paths: 
+      - build/
+
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "installing aws cli..."
+    - apt-get update
+    - apt-get install -y awscli
+    - aws configure list
+    - echo "configuration done..."
+    - aws s3 cp build/ s3://group4-digitalbooking-front-s3/ --recursive --include "*"
+    - echo "- aws s3 sync build/ s3://group4-digitalbooking-front-s3"
+  dependencies:
+    - build_job
+
+    

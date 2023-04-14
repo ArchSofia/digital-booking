@@ -1,0 +1,2272 @@
+{
+	"info": {
+		"_postman_id": "b3b3439f-91bb-48b1-979f-e0613cba2c0a",
+		"name": "PROYECTO INTEGRADOR DB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24510116"
+	},
+	"item": [
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "LISTAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LISTAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categorias",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 20:40:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"titulo\": \"Hoteles\",\n        \"descripcion\": \"Hoteles\",\n        \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n    },\n    {\n        \"id\": 2,\n        \"titulo\": \"Hostels\",\n        \"descripcion\": \"Hostels\",\n        \"urlImagen\": \"https://images.unsplash.com/photo-1633411187642-f84216917af1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1191&q=80\"\n    },\n    {\n        \"id\": 3,\n        \"titulo\": \"Departamentos\",\n        \"descripcion\": \"Departamentos\",\n        \"urlImagen\": \"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n    },\n    {\n        \"id\": 4,\n        \"titulo\": \"Bed & Breakfast\",\n        \"descripcion\": \"Bed & Breakfast\",\n        \"urlImagen\": \"https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "AGREGAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"titulo\": \"agregado en postman\",\n        \"descripcion\": \"prueba con mas de 20 caracteres\",\n        \"urlImagen\": \"prueba con mas de 50 caracteres sino tira error asique completo esto \"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categorias/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"titulo\": \"agregado en postman\",\n        \"descripcion\": \"prueba con mas de 20 caracteres\",\n        \"urlImagen\": \"prueba con mas de 50 caracteres sino tira error asique completo esto \"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categorias/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 20:47:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria(id=5, titulo=agregado en postman, descripcion=prueba con mas de 20 caracteres, urlImagen=prueba con mas de 50 caracteres sino tira error asique completo esto )agregado"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categorias/delete/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categorias/delete/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 20:48:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria con id: 5 eliminado"
+						}
+					]
+				},
+				{
+					"name": "MODIFICAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \n    \"id\": 4,\n    \"titulo\": \"Bed & Breakfast\",\n    \"descripcion\": \"Bed & Breakfast hospedaje hogar\",\n    \"urlImagen\": \"https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categorias/update/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MODIFICAR",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"id\": 4,\n        \"titulo\": \"HostelsModificado\",\n        \"descripcion\": \"hostels para reservar con caracteres mas de 20\",\n        \"urlImagen\": \"url de la imagen con mas de 50 caracteres sino no te lo toma\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categorias/update/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias",
+										"update",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 20:50:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria(id=4, titulo=HostelsModificado, descripcion=hostels para reservar con caracteres mas de 20, urlImagen=url de la imagen con mas de 50 caracteres sino no te lo toma)modificada"
+						},
+						{
+							"name": "MODIFICAR",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \n    \"id\": 4,\n    \"titulo\": \"Bed & Breakfast\",\n    \"descripcion\": \"Bed & Breakfast hospedaje hogar\",\n    \"urlImagen\": \"https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n    }\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categorias/update/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias",
+										"update",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:28:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria(id=4, titulo=Bed & Breakfast, descripcion=Bed & Breakfast hospedaje hogar, urlImagen=https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)modificada"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "LISTAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LISTAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/productos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"productos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:28:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"titulo\": \"bedandb1\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"bed1\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 1,\n            \"titulo\": \"Hoteles\",\n            \"descripcion\": \"Hoteles\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 1,\n            \"ciudad\": \"Buenos Aires\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 2,\n        \"titulo\": \"bab2\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"bed2\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 1,\n            \"titulo\": \"Hoteles\",\n            \"descripcion\": \"Hoteles\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 2,\n            \"ciudad\": \"Mar del Plata\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 3,\n        \"titulo\": \"dep1\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"de1\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 2,\n            \"titulo\": \"Hostels\",\n            \"descripcion\": \"Hostels\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1633411187642-f84216917af1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1191&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 3,\n            \"ciudad\": \"Rosario\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 4,\n        \"titulo\": \"dep2\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"de2\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 2,\n            \"titulo\": \"Hostels\",\n            \"descripcion\": \"Hostels\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1633411187642-f84216917af1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1191&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 4,\n            \"ciudad\": \"La PLata\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 5,\n        \"titulo\": \"hostel1\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"hos1\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 3,\n            \"titulo\": \"Departamentos\",\n            \"descripcion\": \"Departamentos\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 5,\n            \"ciudad\": \"Bahia Blanca\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 6,\n        \"titulo\": \"hostel2\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"hos2\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 3,\n            \"titulo\": \"Departamentos\",\n            \"descripcion\": \"Departamentos\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 6,\n            \"ciudad\": \"Montevideo\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 7,\n        \"titulo\": \"hotel1\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"hot1\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 4,\n            \"titulo\": \"Bed & Breakfast\",\n            \"descripcion\": \"Bed & Breakfast hospedaje hogar\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 7,\n            \"ciudad\": \"Santiago\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },\n    {\n        \"id\": 8,\n        \"titulo\": \"hotel2\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"hot2\",\n        \"disponibilidad\": \"\",\n        \"categoria\": {\n            \"id\": 4,\n            \"titulo\": \"Bed & Breakfast\",\n            \"descripcion\": \"Bed & Breakfast hospedaje hogar\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 8,\n            \"ciudad\": \"Paris\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "AGREGAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"titulo\": \"agregando usando postman\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"prueba\",\n        \"disponibilidad\": \"true\",\n        \"categoria\": {\n            \"id\": 1,\n            \"titulo\": \"Hoteles\",\n            \"descripcion\": \"Hoteles\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 1,\n            \"ciudad\": \"Buenos Aires\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/productos/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"titulo\": \"agregando usando postman\",\n        \"ubicacion\": \"calle\",\n        \"descripcion\": \"prueba\",\n        \"disponibilidad\": \"true\",\n        \"categoria\": {\n            \"id\": 1,\n            \"titulo\": \"Hoteles\",\n            \"descripcion\": \"Hoteles\",\n            \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n        },\n        \"ciudad\": {\n            \"id\": 1,\n            \"ciudad\": \"Buenos Aires\"\n        },\n        \"caracteristicas\": [],\n        \"politica\": null\n    },",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/productos/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"productos",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:32:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Producto@5a113c6aagregado"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/productos/delete/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categorias/delete/9",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias",
+										"delete",
+										"9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Feb 2023 19:04:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria con id: 5 eliminado"
+						}
+					]
+				},
+				{
+					"name": "MODIFICAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"id\": 4,\n        \"titulo\": \"HostelsModificado\",\n        \"descripcion\": \"hostels para reservar\",\n        \"url\": \"url\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/productos/update/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MODIFICAR",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"id\": 4,\n        \"titulo\": \"HostelsModificado\",\n        \"descripcion\": \"hostels para reservar\",\n        \"url\": \"url\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categorias/update/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categorias",
+										"update",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Feb 2023 19:09:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria(id=4, titulo=HostelsModificado, descripcion=hostels para reservar, url=url)modificada"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Imagenes",
+			"item": [
+				{
+					"name": "LISTAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/imagenes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imagenes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LISTAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/imagenes",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"imagenes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:48:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 161,\n        \"titulo\": \"bed and breakfast 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    },\n    {\n        \"id\": 162,\n        \"titulo\": \"bed and breakfast 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    },\n    {\n        \"id\": 163,\n        \"titulo\": \"bed and breakfast 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    },\n    {\n        \"id\": 164,\n        \"titulo\": \"bed and breakfast 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    },\n    {\n        \"id\": 165,\n        \"titulo\": \"bed and breakfast 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    },\n    {\n        \"id\": 166,\n        \"titulo\": \"bed and breakfast 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/bybf1.webp\"\n    },\n    {\n        \"id\": 167,\n        \"titulo\": \"bed and breakfast 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/bybf2.webp\"\n    },\n    {\n        \"id\": 168,\n        \"titulo\": \"bed and breakfast 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/bybf3.webp\"\n    },\n    {\n        \"id\": 169,\n        \"titulo\": \"bed and breakfast 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/bybf4.webp\"\n    },\n    {\n        \"id\": 170,\n        \"titulo\": \"bed and breakfast 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/bybf5.webp\"\n    },\n    {\n        \"id\": 171,\n        \"titulo\": \"depto 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dep1.webp\"\n    },\n    {\n        \"id\": 172,\n        \"titulo\": \"depto 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dep2.webp\"\n    },\n    {\n        \"id\": 173,\n        \"titulo\": \"depto 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dep3.webp\"\n    },\n    {\n        \"id\": 174,\n        \"titulo\": \"depto 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dep4.webp\"\n    },\n    {\n        \"id\": 175,\n        \"titulo\": \"depto 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dep5.webp\"\n    },\n    {\n        \"id\": 176,\n        \"titulo\": \"depto 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dept1.webp\"\n    },\n    {\n        \"id\": 177,\n        \"titulo\": \"depto 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dept2.webp\"\n    },\n    {\n        \"id\": 178,\n        \"titulo\": \"depto 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dept3.webp\"\n    },\n    {\n        \"id\": 179,\n        \"titulo\": \"depto 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dept4.webp\"\n    },\n    {\n        \"id\": 180,\n        \"titulo\": \"depto 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/dept5.webp\"\n    },\n    {\n        \"id\": 181,\n        \"titulo\": \"Hostel 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/host1.jpg\"\n    },\n    {\n        \"id\": 182,\n        \"titulo\": \"Hostel 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/host2.jpg\"\n    },\n    {\n        \"id\": 183,\n        \"titulo\": \"Hostel 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/host3.jpg\"\n    },\n    {\n        \"id\": 184,\n        \"titulo\": \"Hostel 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/host4.jpg\"\n    },\n    {\n        \"id\": 185,\n        \"titulo\": \"Hostel 1\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/host5.jpg\"\n    },\n    {\n        \"id\": 186,\n        \"titulo\": \"Hostel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hostel1.jpg\"\n    },\n    {\n        \"id\": 187,\n        \"titulo\": \"Hostel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hostel2.jpg\"\n    },\n    {\n        \"id\": 188,\n        \"titulo\": \"Hostel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hostel3.jpg\"\n    },\n    {\n        \"id\": 189,\n        \"titulo\": \"Hostel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hostel4.jpg\"\n    },\n    {\n        \"id\": 190,\n        \"titulo\": \"Hostel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hostel5.jpg\"\n    },\n    {\n        \"id\": 191,\n        \"titulo\": \"Hotel 1 \",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hote1.jpg\"\n    },\n    {\n        \"id\": 192,\n        \"titulo\": \"Hotel 1 \",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hote2.jpg\"\n    },\n    {\n        \"id\": 193,\n        \"titulo\": \"Hotel 1 \",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hote3.jpg\"\n    },\n    {\n        \"id\": 194,\n        \"titulo\": \"Hotel 1 \",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hote4.jpg\"\n    },\n    {\n        \"id\": 195,\n        \"titulo\": \"Hotel 1 \",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hote5.jpg\"\n    },\n    {\n        \"id\": 196,\n        \"titulo\": \"Hotel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hotel1.jpg\"\n    },\n    {\n        \"id\": 197,\n        \"titulo\": \"Hotel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hotel2.jpg\"\n    },\n    {\n        \"id\": 198,\n        \"titulo\": \"Hotel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hotel3.jpg\"\n    },\n    {\n        \"id\": 199,\n        \"titulo\": \"Hotel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hotel4.jpg\"\n    },\n    {\n        \"id\": 200,\n        \"titulo\": \"Hotel 2\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/hotel5.jpg\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "AGREGAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " \n       {\n        \"titulo\": \"bed and breakfast 1 PRUEBA\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    }\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/imagenes/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imagenes",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " \n       {\n        \"titulo\": \"bed and breakfast 1 PRUEBA\",\n        \"producto\": null,\n        \"url\": \"https://group4-digitalbooking-images-s3.s3.us-east-2.amazonaws.com/img/byb5.webp\\r \"\n    }\n    ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/imagenes/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"imagenes",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:56:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Imagen@508fdcfbagregado"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/imagenes/delete/202",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"imagenes",
+								"delete",
+								"202"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/imagenes/delete/202",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"imagenes",
+										"delete",
+										"202"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:59:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Picture con id: 202 eliminado"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Ciudades",
+			"item": [
+				{
+					"name": "LISTAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ciudades",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ciudades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGREGAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"ciudad\": \"Prueba\"\n        \n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ciudades/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ciudades",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"ciudad\": \"Lisboa\"\n        \n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ciudades/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ciudades",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Mar 2023 22:48:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Ciudad@43db022cagregado"
+						},
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"ciudad\": \"Prueba\"\n        \n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ciudades/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ciudades",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 22:04:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Ciudad@511df71agregado"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ciudades/delete/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ciudades",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/ciudades/delete/10",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ciudades",
+										"delete",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 22:04:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Ciudad con id: 10 eliminada"
+						}
+					]
+				},
+				{
+					"name": "MODIFICAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"id\": 11,\n        \"ciudad\": \"PruebaModificar\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ciudades/update/11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ciudades",
+								"update",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MODIFICAR",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\n        \"id\": 11,\n        \"ciudad\": \"PruebaModificar\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ciudades/update/11",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ciudades",
+										"update",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 22:07:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Ciudad@1b9b6105modificada"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Caracteristicas",
+			"item": [
+				{
+					"name": "LISTAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/caracteristicas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"caracteristicas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LISTAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/caracteristicas",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"caracteristicas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 23:19:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"idcaracteristica\": 1,\n        \"caracteristicaNombre\": \"Televisión\"\n    },\n    {\n        \"idcaracteristica\": 2,\n        \"caracteristicaNombre\": \"Wifi\"\n    },\n    {\n        \"idcaracteristica\": 3,\n        \"caracteristicaNombre\": \"Frente a la costa\"\n    },\n    {\n        \"idcaracteristica\": 4,\n        \"caracteristicaNombre\": \"Cocina\"\n    },\n    {\n        \"idcaracteristica\": 5,\n        \"caracteristicaNombre\": \"Estacionamiento gratis en la propiedad\"\n    },\n    {\n        \"idcaracteristica\": 6,\n        \"caracteristicaNombre\": \"Acceso a la playa - Frente a la playa\"\n    },\n    {\n        \"idcaracteristica\": 7,\n        \"caracteristicaNombre\": \"Shampoo\"\n    },\n    {\n        \"idcaracteristica\": 8,\n        \"caracteristicaNombre\": \"Servicios básicos\"\n    },\n    {\n        \"idcaracteristica\": 9,\n        \"caracteristicaNombre\": \"Zona de trabajo\"\n    },\n    {\n        \"idcaracteristica\": 10,\n        \"caracteristicaNombre\": \"Check-in sin restricción de horario\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "AGREGAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"caracteristicaNombre\": \"Check-in sin restricción de horario PRUEBA POSTMAN\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/caracteristicas/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"caracteristicas",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"caracteristicaNombre\": \"Check-in sin restricción de horario PRUEBA POSTMAN\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/caracteristicas/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"caracteristicas",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 23:20:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Caracteristica@9895d53agregado"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/caracteristicas/delete/11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"caracteristicas",
+								"delete",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/caracteristicas/delete/11",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"caracteristicas",
+										"delete",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 23:21:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Feature con id: 11 eliminado"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Puntuaciones",
+			"item": [
+				{
+					"name": "LISTAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/puntuaciones",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"puntuaciones"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LISTAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/puntuaciones",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"puntuaciones"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 23:27:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "LISTAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/puntuaciones",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"puntuaciones"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 23:34:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"puntuacion\": 1,\n        \"producto\": {\n            \"id\": 1,\n            \"titulo\": \"bedandb1\",\n            \"ubicacion\": \"calle\",\n            \"descripcion\": \"bed1\",\n            \"disponibilidad\": \"\",\n            \"categoria\": {\n                \"id\": 1,\n                \"titulo\": \"Hoteles\",\n                \"descripcion\": \"Hoteles\",\n                \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n            },\n            \"ciudad\": {\n                \"id\": 1,\n                \"ciudad\": \"Buenos Aires\"\n            },\n            \"caracteristicas\": [],\n            \"politica\": null\n        },\n        \"usuario\": {\n            \"id\": 1,\n            \"nombre\": \"\",\n            \"apellido\": \"a\",\n            \"email\": \"a\",\n            \"contrasena\": \"a\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "AGREGAR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n       \n        \"puntuacion\": 2,\n        \"producto\": {\n            \"id\": 1,\n            \"titulo\": \"bedandb1\",\n            \"ubicacion\": \"calle\",\n            \"descripcion\": \"bed1\",\n            \"disponibilidad\": \"\",\n            \"categoria\": {\n                \"id\": 1,\n                \"titulo\": \"Hoteles\",\n                \"descripcion\": \"Hoteles\",\n                \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n            },\n            \"ciudad\": {\n                \"id\": 1,\n                \"ciudad\": \"Buenos Aires\"\n            },\n            \"caracteristicas\": [],\n            \"politica\": null\n        },\n        \"usuario\": {\n            \"id\": 1,\n            \"nombre\": \"\",\n            \"apellido\": \"a\",\n            \"email\": \"a\",\n            \"contrasena\": \"a\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/puntuaciones/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"puntuaciones",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AGREGAR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n       \n        \"puntuacion\": 2,\n        \"producto\": {\n            \"id\": 1,\n            \"titulo\": \"bedandb1\",\n            \"ubicacion\": \"calle\",\n            \"descripcion\": \"bed1\",\n            \"disponibilidad\": \"\",\n            \"categoria\": {\n                \"id\": 1,\n                \"titulo\": \"Hoteles\",\n                \"descripcion\": \"Hoteles\",\n                \"urlImagen\": \"https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\n            },\n            \"ciudad\": {\n                \"id\": 1,\n                \"ciudad\": \"Buenos Aires\"\n            },\n            \"caracteristicas\": [],\n            \"politica\": null\n        },\n        \"usuario\": {\n            \"id\": 1,\n            \"nombre\": \"\",\n            \"apellido\": \"a\",\n            \"email\": \"a\",\n            \"contrasena\": \"a\"\n        }\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/puntuaciones/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"puntuaciones",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 23:35:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "com.example.demo.model.Puntuaciones@2de5d51bagregado"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/puntuaciones/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"puntuaciones",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

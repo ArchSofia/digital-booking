@@ -1,0 +1,19 @@
+.carousel {
+    /* display: none; */
+}
+
+.control-dots {
+    display: none;
+}
+
+.carousel .carousel-status {
+    bottom: 0;
+    top: 85%;
+    font-size: 100%;
+}
+
+@media (min-width: 1025px) {
+    .mobile{
+        display: none;
+    }
+}

@@ -1,0 +1,224 @@
+.formReserva{
+    background-color: var(--light_grey);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.formReserva h2 {
+    padding-bottom: 20px;
+}
+
+.reserva_Bloque1 {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.reserva_Bloque2 {
+    width: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.crearPropiedad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.formProducto {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    background-color: var(--light_grey);
+    padding: 20px;
+    margin-bottom: 60px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.principio {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.principio_main {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.principio_bloque1{
+    width: 80%;
+}
+.principio_bloque1 input {
+    width: 90%;
+}
+.principio_bloque2{
+    width: 80%;
+}
+.principio_bloque2 select {
+    width: 100%;
+}
+
+.principio_bloque3 input {
+    width: 100%;
+    min-height: 100px;
+    vertical-align: top !important;
+}
+
+.medio {
+    width: 90%;
+}
+
+.medio_main {
+
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.checkBox {
+    display: flex;
+}
+
+.medio2 {
+    width: 90%;
+}
+
+.medio2_main {
+    display: flex;
+
+    justify-content: center;
+}
+
+.medio2_bloque1 {
+
+    width: 30%;
+    padding: 20px;
+}
+
+.medio2_bloque2 {
+
+    width: 30%;
+    padding: 20px;
+}
+
+.medio2_bloque3 {
+
+    width: 30%;
+    padding: 20px;
+}
+
+.medio2_bloque1 input {
+    width: 100%;
+    height: 100px;
+}
+
+.medio2_bloque2 input {
+    width: 100%;
+    height: 100px;
+}
+
+.medio2_bloque3 input {
+    width: 100%;
+    height: 100px;
+}
+
+.final {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+}
+
+.final_main {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.final_main input {
+    width: 80%;
+}
+
+.final_main button {
+    width: 20%;
+}
+
+.formProducto_crear {
+    width: 40%;
+    margin: 40px;
+}
+
+.formProducto button {
+    background-color: var(--green);
+
+    color: white;
+}
+
+.formProducto button:hover {
+    background-color: var(--blue);
+}
+
+.formProducto button:active {
+    background-color: var(--dark_blue);
+    color: white
+}
+
+@media screen and (max-width: 1025px) and (min-width: 500px) {
+    .formReserva {
+        flex-direction: column;
+    }
+    .reserva_Bloque1 {
+        width: 92%;
+    }
+    .reserva_Bloque2 {
+        width: 92%;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formReserva {
+        flex-direction: column;
+    }
+    .reserva_Bloque1 {
+        width: 92%;
+    }
+    .reserva_Bloque2 {
+        width: 92%;
+        margin-top: 40px;
+    }
+    .formProducto .principio_main, .formProducto .final_main,.formProducto .medio2_main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .formProducto .medio2_bloque1, .formProducto .medio2_bloque2, .formProducto .medio2_bloque3{
+        width: 84%;
+    }
+
+    .formProducto .formProducto_crear {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+    }
+
+}
