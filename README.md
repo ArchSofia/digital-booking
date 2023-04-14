@@ -89,7 +89,7 @@ Personally, I took the role of back end developer & database administrator, taki
 
 I developed the API by myself, trying to use the best practices throughout the project. The API was built using Spring framework and 3 layer arquitecture: Presentation Layer, Business Layer & Persistence Layer. Global exception handler was used, along with custom RunTime Exceptions, for error and business logic handling, as well as a custom error dictionary to facilitate error detection for back end administrators. JWT was implemented using Spring Security to restrict access to specific endpoint available only for admins (products administration, user administration, etc.)
 
-<a href="Script DB.txt">Database creation script</a>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
