@@ -12,11 +12,11 @@
     <a href="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"><strong>Certified Tech Developer</strong></a> career's final project where the knowledge of back end, front end, databases, infrastructure and testing are combined to achieve a productive cloud deployed app.
     <br />
     <br />
-    <a href="http://group4-digitalbooking-front-s3.s3-website.us-east-2.amazonaws.com/"><strong>Explore the deployed app @ AWS »</strong></a>
+    <a href="[http://group4-digitalbooking-front-s3.s3-website.us-east-2.amazonaws.com/](http://frontenddigitalbooking.s3-website.us-east-2.amazonaws.com/)"><strong>Explore the deployed app @ AWS »</strong></a>
   </p>
 </div>
 
-
+http://frontenddigitalbooking.s3-website.us-east-2.amazonaws.com/
 
 <!-- TABLE OF CONTENTS -->
 <details>
