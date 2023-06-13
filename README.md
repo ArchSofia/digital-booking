@@ -95,9 +95,11 @@ I developed the API by myself, trying to use the best practices throughout the p
 <!-- CONTACT -->
 ## Contact
 
-Sofia Diaz Valdez - [![linkedin][linkedin-shield]][linkedin-url] - sofiadiazvaldez@gmail.com
+ Sofia Diaz Valdez - sofiadiazvaldez@gmail.com
+ 
+ [![linkedin][linkedin-shield]][linkedin-url]
 
-Project Link: [https://github.com/ArchSofia/digital-booking](http://frontenddigitalbooking.s3-website.us-east-2.amazonaws.com/)
+Project Link: [digitalbooking](http://frontenddigitalbooking.s3-website.us-east-2.amazonaws.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
